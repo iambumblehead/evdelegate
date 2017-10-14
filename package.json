@@ -1,0 +1,23 @@
+{
+  "name": "evdelegate",
+  "main": "evdelegate",
+  "version": "0.0.1",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "description": "delegate events from document.body",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iambumblehead/evdelegate.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "keywords": [
+    "delegation",
+    "delegate",
+    "event"
+  ]
+}
