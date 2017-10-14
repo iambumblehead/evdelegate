@@ -5,6 +5,27 @@ evdelegate
 
 delegate events from document.body
 
+``` javascript
+const evdel = require('evtdelegator');
+      delegator = evdel.create();
+
+evtdelegator.lsnpub({}, body, [
+  'touchend',
+  'click'
+], (cfg, e) => {
+  let delegatorstate = evdel.getactivestate(delegator);
+  console.log('click', delegatorstate);
+
+  if (delegatorstate) {
+    e.preventDefault();
+    console.log('delegate click', delegatorstate);
+  }
+});
+
+delegator = evdel.addelemstate(delegator, elem, cfg);
+```
+
+
 [0]: http://www.bumblehead.com                            "bumblehead"
 
 ![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)
