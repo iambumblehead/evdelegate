@@ -1,5 +1,5 @@
 // Filename: evdelegator.js  
-// Timestamp: 2017.10.13-16:12:18 (last modified)
+// Timestamp: 2017.10.19-22:16:30 (last modified)
 // Author(s): bumblehead <chris@bumblehead.com>  
 
 module.exports = (o => {
@@ -104,21 +104,12 @@ module.exports = (o => {
   //
   // convenience data
   //
-  o.publish = (cfg, etype, ev) => (
-    typeof cfg.publishfn === 'function'
-      && cfg.publishfn(cfg, etype, ev),
-    cfg);
-  
-  o.lsnpub = (cfg, elem, evarr, fn) => 
-    o.lsnarr(evarr, elem, e => fn(cfg, e, fn));
-
-  o.lsnarr = (evarr, elem, fn) => 
+  o.lsnarr = (elem, evarr, fn) => 
     evarr.map(e => elem.addEventListener(e, fn));
 
-  o.lsnrmarr = (evarr, elem, fn) => 
+  o.lsnrmarr = (elem, evarr, fn) => 
     evarr.map(e => elem.removeEventListener(e, fn));  
   
-
   return o;
 
 })({});

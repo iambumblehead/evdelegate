@@ -22,6 +22,7 @@ evtdelegator.lsnpub({}, body, [
   }
 });
 
+// associate 'elem' with the touchend and click dispatcher above
 delegator = evdel.addelemstate(delegator, elem, cfg);
 ```
 
