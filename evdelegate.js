@@ -1,5 +1,5 @@
 // Filename: evdelegator.js
-// Timestamp: 2017.11.03-13:06:56 (last modified)
+// Timestamp: 2017.11.03-13:35:11 (last modified)
 // Author(s): bumblehead <chris@bumblehead.com>
 
 module.exports = (o => {
@@ -12,6 +12,7 @@ module.exports = (o => {
   //   statearr : [ ...statearr ]
   //
   o.create = () => ({
+    listenersarr : [],
     activestate : null,
     statearr : []
   });
@@ -104,6 +105,11 @@ module.exports = (o => {
     delegator.statearr = delegator.statearr
       .filter(stateelem => o.getstateid(stateelem) !== elem.id);
 
+    // completely removes *all* listeners associtated w/ delegator
+    delegator.listenersarr.map(([ listeners, lsnfn ]) => {
+      o.lsnrmarr(elem, listeners, lsnfn);
+    });
+
     return delegator;
   };
 
@@ -115,6 +121,16 @@ module.exports = (o => {
 
   o.lsnrmarr = (elem, evarr, fn) =>
     evarr.map(e => elem.removeEventListener(e, fn));
+
+  o.lsnpubarr = (delegator, cfg, elem, evarr, fn) => {
+    const lsnfn = e => fn(cfg, e, fn);
+
+    delegator.listenersarr.push([ evarr, lsnfn ]);
+
+    o.lsnarr(elem, evarr, lsnfn);
+
+    return delegator;
+  };
 
   return o;
 })({});
