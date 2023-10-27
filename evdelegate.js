@@ -2,7 +2,7 @@
 // Timestamp: 2017.11.03-13:35:11 (last modified)
 // Author(s): bumblehead <chris@bumblehead.com>
 
-module.exports = (o => {
+export default (o => {
   // delegator:
   //
   //   activestate :
