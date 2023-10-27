@@ -2,12 +2,12 @@ evdelegate
 ==========
 **(c)[Bumblehead][0]**
 
-
 delegate events from document.body
 
 ``` javascript
-const evdel = require('evtdelegator');
-      delegator = evdel.create();
+import evdel from 'evtdelegator';
+
+const delegator = evdel.create();
 
 evtdelegator.lsnpub({}, body, [
   'touchend',
@@ -29,7 +29,7 @@ delegator = evdel.addelemstate(delegator, elem, cfg);
 
 [0]: http://www.bumblehead.com                            "bumblehead"
 
-![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)
+![scrounge](https://github.com/iambumblehead/scroungejs/raw/main/img/hand.png)
 
 (The MIT License)
 

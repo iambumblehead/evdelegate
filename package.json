@@ -1,19 +1,20 @@
 {
   "name": "evdelegate",
-  "main": "evdelegate",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "type": "module",
   "readmeFilename": "README.md",
   "license": "MIT",
   "description": "delegate events from document.body",
+  "main": "evdelegate.js",
+  "exports": {
+    "import": "./evdelegate.js"
+  },
+  "files": [
+    "./evdelegate.js"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iambumblehead/evdelegate.git"
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
-  "scripts": {
+    "url": "git+https://github.com/iambumblehead/evdelegate.git"
   },
   "keywords": [
     "delegation",
